@@ -77,8 +77,7 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-size: cover;
-    background-position: center center;
+    object-fit: cover;
 }
 .store__stars {
     display: flex;
@@ -149,6 +148,9 @@ body {
     opacity: 30%;
     transition: .3s;
 }
+.store__chevrone:hover {
+    opacity: .7;
+}
 .store__title {
     display: block;
     font-family: 'Noto Sans', sans-serif;
@@ -161,6 +163,7 @@ body {
 .store__book-list {
     display: flex;
 }
+
 .book {
     display: flex;
     flex-direction: column;
@@ -168,15 +171,11 @@ body {
     text-decoration: none;
     transition: .2s;
 }
-.book:hover {
-    opacity: .8;
-}
 .book__cover {
     width: 60px;
     height: 85px;
     border-radius: 6px;
-    background-size: cover;
-    background-position: center center;
+    object-fit: cover;
     margin-bottom: 4px;
 }
 .book__name {
@@ -197,14 +196,13 @@ body {
     opacity: .6;
     text-decoration: none;
 }
-
+.book:last-child {
+    margin-right: 0;
+}
 @media (min-width: 1025px)  {
     .store:hover {
         box-shadow: 0 8px 30px rgba(0,0,0,0.1);
         border-bottom: 1px solid #ffffff;
-    }
-    .store:hover .store__chevrone {
-        opacity: .7;
     }
 }
 
@@ -248,7 +246,48 @@ body {
     }
 }
 @media (max-width: 414px)  {
+    .store__container {
+        flex-direction: column;
+    }
+    .store__img {
+        width: 150px;
+        height: 150px;
+    }
     .store__chevrone {
         display: none !important;
     }
+    .store__star-item {
+        font-size: 24px !important;
+    }
+    .store__name {
+        display: inline-block;
+        font-size: 22px;
+        line-height: 30px;
+        margin-bottom: 8px;
+    }
+    .store__right {
+        padding-left: 0;
+    }
+    .store__sub-info {
+        display: inline-block;
+    }
+    .store__info {
+        text-align: center;
+    }
+    .store__books {
+        align-items: center;
+    }
+    .book__cover {
+        width: 70px;
+        height: 98px;
+    }
+    .store__flag {
+        width: 32px;
+        height: 32px;
+    }
+    .store__link, .store__date {
+        font-size: 15px;
+    }
+
 }
+
